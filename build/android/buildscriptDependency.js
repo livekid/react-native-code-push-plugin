@@ -10,7 +10,7 @@ function applyImplementation(appBuildGradle) {
         return appBuildGradle;
     }
     // The default on Expo 52
-    const reactNative76Include = `apply from: new File(["node", "--print", "require.resolve('@react-native-community/cli-platform-android/package.json', { paths: [require.resolve('react-native/package.json')] })"].execute(null, rootDir).text.trim(), "../native_modules.gradle");`;
+    const reactNative76Include = `apply plugin: "com.facebook.react"`;
     if (appBuildGradle.includes(reactNative76Include)) {
         return (0, addBelowAnchorIfNotFound_1.addBelowAnchorIfNotFound)(appBuildGradle, reactNative76Include, codePushImplementation);
     }
