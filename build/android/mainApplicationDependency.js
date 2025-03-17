@@ -12,12 +12,8 @@ const withAndroidMainApplicationDependency = (config) => {
         // Import the plugin class.
         const hostWrapperClass = "import expo.modules.ReactNativeHostWrapper";
         const codePushClass = "import com.microsoft.codepush.react.CodePush";
-        // Expo 49 uses Java and requires the ;
-        if (mainApplicationProps.modResults.contents.includes(`${hostWrapperClass};`)) {
-            mainApplicationProps.modResults.contents = (0, addBelowAnchorIfNotFound_1.addBelowAnchorIfNotFound)(mainApplicationProps.modResults.contents, `${hostWrapperClass};`, `${codePushClass};`);
-        }
-        // Expo 50 uses Kotlin and does not require the ;
-        else if (mainApplicationProps.modResults.contents.includes(hostWrapperClass)) {
+        // Expo 50+ uses Kotlin and does not require the ;
+        if (mainApplicationProps.modResults.contents.includes(hostWrapperClass)) {
             mainApplicationProps.modResults.contents = (0, addBelowAnchorIfNotFound_1.addBelowAnchorIfNotFound)(mainApplicationProps.modResults.contents, hostWrapperClass, codePushClass);
         }
         /**
@@ -41,12 +37,6 @@ const withAndroidMainApplicationDependency = (config) => {
       protected String getJSBundleFile() {
         return CodePush.getJSBundleFile();
       }\n`;
-        // The default on Expo 49
-        const defaultReactNativeAnchor = "new DefaultReactNativeHost(this) {";
-        if (mainApplicationProps.modResults.contents.includes(defaultReactNativeAnchor)) {
-            mainApplicationProps.modResults.contents = (0, addBelowAnchorIfNotFound_1.addBelowAnchorIfNotFound)(mainApplicationProps.modResults.contents, defaultReactNativeAnchor, javaJSBundleFileOverride);
-            return mainApplicationProps;
-        }
         // This is for compatibility, as it follows the Codepush instructions up-to-spec.
         const reactNativeHostAnchor = "new ReactNativeHost(this) {";
         if (mainApplicationProps.modResults.contents.includes(reactNativeHostAnchor)) {

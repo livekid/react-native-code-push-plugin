@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.replaceIfNotFound = void 0;
+exports.replaceIfNotFound = replaceIfNotFound;
 function replaceIfNotFound(originalString, stringToBeReplaced, newStringToReplace) {
     // Make sure the original does not contain the new string
     if (!originalString.includes(newStringToReplace)) {
@@ -8,5 +8,4 @@ function replaceIfNotFound(originalString, stringToBeReplaced, newStringToReplac
     }
     return originalString;
 }
-exports.replaceIfNotFound = replaceIfNotFound;
 //# sourceMappingURL=replaceIfNotFound.js.map
