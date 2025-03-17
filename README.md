@@ -30,14 +30,8 @@ After installing this npm package, add the [config plugin](https://docs.expo.io/
       [
         "react-native-code-push-plugin",
         {
-          "android": {
-            "CodePushServerURL": "YOUR_CODE_PUSH_SERVER_URL", // Optional. Pass this value to configure a self-hosted codepush server.
-            "CodePushDeploymentKey": "YOUR_ANDROID_CODE_PUSH_KEY"
-          },
-          "ios": {
-            "CodePushServerURL": "YOUR_CODE_PUSH_SERVER_URL", // Optional. Pass this value to configure a self-hosted codepush server.
-            "CodePushDeploymentKey": "YOUR_IOS_CODE_PUSH_KEY"
-          }
+          "CodePushServerURL": "YOUR_CODE_PUSH_SERVER_URL", // Pass this value to configure a self-hosted codepush server.
+          "CodePushDeploymentKey": "YOUR_CODE_PUSH_KEY"
         }
       ]
     ]

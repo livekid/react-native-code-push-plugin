@@ -7,19 +7,17 @@ const config_plugins_1 = require("expo/config-plugins");
  * https://github.com/microsoft/react-native-code-push/blob/master/docs/setup-ios.md
  */
 const withIosInfoPlistDependency = (config, props) => {
-    // if (!props?.ios?.CodePushServerURL) {
-    //     throw new Error("You need to provide the `CodePushServerURL` IOS property for the @config-plugins/react-native-code-push plugin to work.");
-    // }
-    if (!props?.ios?.CodePushDeploymentKey) {
-        throw new Error("You need to provide the `CodePushDeploymentKey` IOS property for the @config-plugins/react-native-code-push plugin to work.");
+    if (!props?.CodePushServerURL) {
+        throw new Error("You need to provide the `CodePushServerURL` property for the @config-plugins/react-native-code-push plugin to work.");
+    }
+    if (!props?.CodePushDeploymentKey) {
+        throw new Error("You need to provide the `CodePushDeploymentKey` property for the @config-plugins/react-native-code-push plugin to work.");
     }
     return (0, config_plugins_1.withInfoPlist)(config, (infoPlistProps) => {
-        if (props?.ios?.CodePushServerURL) {
-            infoPlistProps.modResults.CodePushServerURL =
-                props?.ios?.CodePushServerURL;
-        }
+        infoPlistProps.modResults.CodePushServerURL =
+            props.CodePushServerURL;
         infoPlistProps.modResults.CodePushDeploymentKey =
-            props.ios.CodePushDeploymentKey;
+            props.CodePushDeploymentKey;
         return infoPlistProps;
     });
 };

@@ -1,6 +1,6 @@
 {
   "name": "react-native-code-push-plugin",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Config plugin to auto configure react-native-code-push on prebuild",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gstj/react-native-code-push-plugin.git"
+    "url": "https://github.com/livekid/react-native-code-push-plugin.git"
   },
   "files": [
     "build",
@@ -29,11 +29,11 @@
     "expo"
   ],
   "peerDependencies": {
-    "expo": ">=49.0.0"
+    "expo": ">=52.0.0"
   },
   "devDependencies": {
-    "expo": ">=49.0.0",
-    "expo-module-scripts": "^3.0.3"
+    "expo": ">=52.0.0",
+    "expo-module-scripts": "4.0.4"
   },
   "upstreamPackage": "react-native-code-push"
 }

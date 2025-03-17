@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addBelowAnchorIfNotFound = void 0;
+exports.addBelowAnchorIfNotFound = addBelowAnchorIfNotFound;
 function addBelowAnchorIfNotFound(originalString, anchor, stringToBeAdded) {
     // Make sure the original does not contain the new string
     if (!originalString.includes(stringToBeAdded)) {
@@ -11,5 +11,4 @@ function addBelowAnchorIfNotFound(originalString, anchor, stringToBeAdded) {
     }
     return originalString;
 }
-exports.addBelowAnchorIfNotFound = addBelowAnchorIfNotFound;
 //# sourceMappingURL=addBelowAnchorIfNotFound.js.map
