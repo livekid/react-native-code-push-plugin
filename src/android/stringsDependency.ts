@@ -44,7 +44,7 @@ export const withAndroidStringsDependency: ConfigPlugin<PluginConfigType> = (
     if (props?.CodePushServerURL) {
       xmlProps.modResults = setStrings(
           xmlProps.modResults,
-          "CodePushServerURL",
+          "CodePushServerUrl",
           props?.CodePushServerURL
       );
     }
